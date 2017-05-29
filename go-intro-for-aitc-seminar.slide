@@ -1,0 +1,24 @@
+Go言語紹介
+AITC セミナー
+16 Jun 2017
+
+柴田 芳樹（Yoshiki Shibata)
+software engineer, translator, consultant
+http://yshibata.blog.so-net.ne.jp/
+@yoshiki_shibata 
+
+* Go言語の歴史
+
+- 2007年9月 Robert Griesemer、Rob Pike、Ken Thompsonにより開発が始まる
+- 2009年11月 発表
+- 2012年 3月28日 Go1
+- 2013年 5月13日 Go1.1：[言語仕様]メソッド値を追加
+- 2013年11月29日 Go1.2：[言語仕様]スライス/配列のスライス操作の追加
+- 2014年 6月19日 Go1.3：マップのイテレーションが完全にランダム
+- 2014年12月11日 Go1.4：セグメントスタックから連続スタックへ変更
+- 2015年 8月19日 Go1.5：コンパイラとランタイムが完全にGo言語で書き直される
+- 2016年 2月17日 Go1.6：vendorをデフォルトでサポート
+- 2016年 8月15日 Go1.7：コンパイラのバックエンドとしてSSAを一部導入
+- 2017年 2月16日 Go1.8：すべてのアーキテクチャでSSAを標準
+- 2017年 8月(?)  Go1.9：[言語仕様]alias declarationを追加
+
