@@ -11,16 +11,9 @@ http://yshibata.blog.so-net.ne.jp/
 
 - 2007年9月 Robert Griesemer、Rob Pike、Ken Thompsonにより開発が始まる
 - 2009年11月 発表
-- 2012年 3月28日 Go1
-- 2013年 5月13日 Go1.1：[言語仕様]メソッド値を追加
-- 2013年11月29日 Go1.2：[言語仕様]スライス/配列のスライス操作の追加
-- 2014年 6月19日 Go1.3：マップのイテレーションが完全にランダム
-- 2014年12月11日 Go1.4：セグメントスタックから連続スタックへ変更
-- 2015年 8月19日 Go1.5：コンパイラとランタイムが完全にGo言語で書き直される
-- 2016年 2月17日 Go1.6：vendorをデフォルトでサポート
-- 2016年 8月15日 Go1.7：コンパイラのバックエンドとしてSSAを一部導入
-- 2017年 2月16日 Go1.8：すべてのアーキテクチャでSSAを標準
-- 2017年 8月(?)  Go1.9：[言語仕様]alias declarationを追加
+- 2012年3月28日 Go1
+- 2017年2月16日 Go1.8
+- 現在は半年単位でリリース。Go1.9は今年の8月の予定
 
 * Go言語と『プログラミング言語Go』との関わり
 
@@ -35,3 +28,33 @@ http://yshibata.blog.so-net.ne.jp/
 - 2015年10月『プログラミング言語Go』翻訳作業開始
 - 2016年5月 『プログラミング言語Go』翻訳作業終了
 - 2016年6月20日 『プログラミング言語Go』全国書店で発売
+
+* Go言語が目指したもの
+
+FAQより [[http://golang.org/doc/faq]]
+
+Go is an attempt to combine the ease of programming of an interpreted, dynamically typed language with the efficiency and safety of a statically typed, compiled language. It also aims to be modern, with support for networked and multicore computing. Finally, working with Go is intended to be fast: it should take at most a few seconds to build a large executable on a single computer. 
+
+Goは、「インタプリタで動的型付け言語のプログラミングの容易さ」と 、「静的型付けコンパイル言語の効率と安全性」を組み合わせる試みです。ネットワークおよびマルチコアのコンピューティングに対するサポートを持つ現代的な言語も目指している。最後に、Goを扱うことが高速であることも目指している。つまり、一台のコンピュータで大きな実行ファイルをビルドするのに高々数秒であるべきである。
+
+
+* Go言語の特徴
+
+- 静的型付け言語（コンパイル言語）ながら、超高速コンパイル
+- 一つの実行可能ファイルが作成される
+- ガベージコレクション
+
+* 超高速コンパイル
+
+- 高速にコンパイルするためにパッケージ間の循環依存を禁止しており、循環しているとコンパイルエラーとなる。
+- パッケージをコンパイルした時に、そのパッケージが依存する他のパッケージの情報を埋め込んでいる。Goのソースコードがインポートしているパッケージの情報を読むだけで、そのGoのソースコードをコンパイルできる。
+- コンパイルが高速なので、インタプリタ言語の感覚ですばやく実行できる
+
+* 一つの実行ファイル
+
+- 生成される実行ファイルは、.soファイルや.dllファイルに一切依存しない実行可能ファイルとして生成される。
+- そのファイルだけをコピーすれば同じOS、同じCPUのコンピュータ上で実行可能。
+- Goのツールチェインは、様々なOSやCPUをサポート。
+- クロスコンパイルも容易にできる。
+- サポートCPU群1: amd64、386、arm
+- サポートCPU群2: arm64、ppc64、ppc64le、mips、mipsle、misp64、mips64le、s390x
