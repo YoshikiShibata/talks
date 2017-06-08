@@ -100,9 +100,9 @@ Goは、「インタプリタで動的型付け言語のプログラミングの
 - スタックは自動的に大きくなっていく
 - デフォルトでは、32ビット環境では250MB、64ビット環境では1GB
 - debug.SetMaxStackでスタックサイズを変更可能
-.play -numbers src/aitc/stacksize.go 
+.play src/aitc/stacksize.go 
 
 
 * ハロー、ワールド
 
-.play -numbers src/aitc/helloworld.go 
+.play src/aitc/helloworld.go 
