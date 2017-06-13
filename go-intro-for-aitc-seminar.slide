@@ -84,6 +84,12 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - サポートCPU群1: amd64、386、arm
 - サポートCPU群2: arm64、ppc64、ppc64le、mips、mipsle、misp64、mips64le、s390x
 
+* ハロー、ワールド
+
+.play src/aitc/helloworld.go 
+
+- ソースコードは、UTF-8形式で書きます
+
 * ガベージコレクション
 
 - Go1ではStop-The-Worldのガベージコレクションであった
@@ -160,8 +166,24 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * 独自のテストコード記述
 
+- 他の言語のようなxUnitフレームワークは提供されていない
+- 独自にテスティング用のパッケージtestingが適用されている
+- ベンチマーク測定用の機能も提供されている
+- オンラインドキュメンテーションに埋め込んで実行できるサンプルコードの機能も提供されている
+
 * 競合状態検出機構
 
-* ハロー、ワールド
+- race condition（競合状態）を検出する機構が提供されている
+- goコマンドのbuild、run、testに-raceオプションを付けると競合状態検出機構が埋め込まれて実行される
+- 動的に解析するので、実行しないと検出できない
+- しかし、自動テストにより、長時間ランニングテストを行うのがベター
 
-.play src/aitc/helloworld.go 
+* プログラミング言語Go 練習問題
+
+.image https://images-na.ssl-images-amazon.com/images/I/410V3ulwP5L.jpg _ 300
+
+- 全部で134問
+- HTTP、JSON、REST APIに関する基礎知識が必要
+- 私の解答は、[[https://github.com/YoshikiShibata/gpl]]にあります
+
+
