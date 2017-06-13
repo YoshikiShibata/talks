@@ -19,13 +19,13 @@ http://yshibata.blog.so-net.ne.jp/
 
 - 2010年8月 会社の若手エンジニアとGo言語勉強会を開始（月に1回）
 - 2012年3月 Go1が正式リリース
-- 2012年10月 『プログラミング言語Goフレーズブック』（翻訳）出版
-- 2013年7月 Go言語を用いた社内プロジェクト1701のリーダ
+- 2012年10月 *『プログラミング言語Goフレーズブック』* （翻訳）出版
+- 2013年7月 Go言語を用いた社内プロジェクト開始
 - 2015年3月 『The Go Programming Language』が執筆されていることに気付く
 - 2015年4月 『The Go Programming Language』の原稿レビューアに加わる
-- 2015年5月 プロジェクト1701解散
+- 2015年5月 社内プロジェクト解散
 - 2015年9月 『The Go Programming Language』の執筆が終わる
-- 2015年10月『プログラミング言語Go』翻訳作業開始
+- 2015年10月 *『プログラミング言語Go』* 翻訳作業開始
 - 2016年5月 『プログラミング言語Go』翻訳作業終了
 - 2016年6月20日 『プログラミング言語Go』全国書店で発売
 
@@ -35,7 +35,7 @@ FAQより [[http://golang.org/doc/faq]]
 
 Go is an attempt to combine the ease of programming of an interpreted, dynamically typed language with the efficiency and safety of a statically typed, compiled language. It also aims to be modern, with support for networked and multicore computing. Finally, working with Go is intended to be fast: it should take at most a few seconds to build a large executable on a single computer. 
 
-Goは、「インタプリタで動的型付け言語のプログラミングの容易さ」と 、「静的型付けコンパイル言語の効率と安全性」を組み合わせる試みです。ネットワークおよびマルチコアのコンピューティングに対するサポートを持つ現代的な言語も目指している。最後に、Goを扱うことが高速であることも目指している。つまり、一台のコンピュータで大きな実行ファイルをビルドするのに高々数秒であるべきである。
+Goは、 *「インタプリタで動的型付け言語のプログラミングの容易さ」* と 、 *「静的型付けコンパイル言語の効率と安全性」* を組み合わせる試みです。 *ネットワークおよびマルチコアのコンピューティング* に対するサポートを持つ現代的な言語も目指している。最後に、 *Goを扱うことが高速であること* も目指している。つまり、一台のコンピュータで大きな実行ファイルをビルドするのに高々数秒であるべきである。
 
 
 * Go言語の特徴
@@ -124,9 +124,9 @@ Goは、「インタプリタで動的型付け言語のプログラミングの
 
 - TBD 
 
-* 標準ライブライー
+* 標準ライブラリ
 
-* 標準フォーマッター
+* 標準フォーマッタ
 
 * 独自のテストコード記述
 
