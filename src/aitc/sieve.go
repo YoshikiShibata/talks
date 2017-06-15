@@ -29,9 +29,9 @@ func Filter(in <-chan int, out chan<- int, prime int) { // HL
 func main() {
 	ch := make(chan int) // Create a new channel.
 	go Generate(ch)      // Launch Generate goroutine.
-	for {
+	for i := 1; i < 100000; i++ {
 		prime := <-ch
-		fmt.Println(prime)
+		fmt.Printf("goroutines = %8d: prime number = %d\n", i, prime)
 		ch1 := make(chan int)
 		go Filter(ch, ch1, prime)
 		ch = ch1

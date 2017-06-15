@@ -137,7 +137,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * ヒープとスタック
 
-- TBD
+.play src/aitc/stackheap.go 
 
 * ゴルーチン（goroutine）
 
@@ -169,6 +169,14 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 * チャネル（続き）
 
 .play src/aitc/sieve.go /^func main/,/^}/
+
+* チャネル（ピンポン）
+
+.code src/aitc/pingpong.go /START OMIT/,/END OMIT/
+
+* チャネル（ピンポン続き）
+
+.play src/aitc/pingpong.go /^func main/,/^}/
 
 
 * 標準ライブラリ
