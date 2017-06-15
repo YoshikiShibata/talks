@@ -119,6 +119,10 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 .play src/aitc/geometry.go
 
+* インタフェース
+
+- TBD
+
 * 埋め込み
 
 .code src/aitc/coloredpoint.go /START OMIT/,/END OMIT/
