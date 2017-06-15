@@ -94,6 +94,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 - Go1ではStop-The-Worldのガベージコレクションであった
 - Go1.8では、完全にStop-The-Worldを削除
+- 現在は、コンカレント・ガベージコレクタ
 - GCの停止時間は100ms以下であり、たいていは10μs程度
 - Go1.9でもさらに改善される予定
 
@@ -121,11 +122,11 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * 埋め込み
 
-.code src/aitc/coloredpoint.go /START DECL/,/END DECL/
+.code src/aitc/coloredpoint.go /START OMIT/,/END OMIT/
 
-* 埋め込み
+* 埋め込み（続き）
 
-.play src/aitc/coloredpoint.go /START MAIN/,/END MAIN/
+.play src/aitc/coloredpoint.go /^func main/,/^}/
 
 * ポインターとアドレス
 
@@ -140,7 +141,18 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * ゴルーチン（goroutine）
 
-- TBD
+- ゴルーチン ≠ スレッド
+- ゴルーチンは、Goのランタイムでスケジューリングされる
+- 実際の処理は、OSのスレッド上で実行される（ _m:n_ スケジューリング)
+- OSスレッドを1個でもすべてのゴルーチンをスケジューリング可能
+- 環境変数GOMAXPROCSで指定可能（デフォルトはコア数）
+- runtime.GOMAXPROCS()でプログラム的に設定可能
+- Go 1.8までは最大256スレッド
+- Go 1.9では最大1024スレッド
+
+* ゴルーチン（gopl.io/ch8/spinner）
+
+.play src/aitc/spinner.go /START OMIT/,/END OMIT/
 
 * 伸長可能なスタック
 
@@ -152,7 +164,12 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * チャネル（channel）
 
-- TBD 
+.code src/aitc/sieve.go /START OMIT/,/END OMIT/
+
+* チャネル（続き）
+
+.play src/aitc/sieve.go /^func main/,/^}/
+
 
 * 標準ライブラリ
 
@@ -177,6 +194,11 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - goコマンドのbuild、run、testに-raceオプションを付けると競合状態検出機構が埋め込まれて実行される
 - 動的に解析するので、実行しないと検出できない
 - しかし、自動テストにより、長時間ランニングテストを行うのがベター
+
+* Go1.9 (Comming in August 2017)
+
+- 言語仕様変更（type alias）: 他のパッケージの型を自分のパッケージの型として再定義できる。[[https://github.com/golang/proposal/blob/master/design/18130-type-alias.md]]
+- パラレルコンパイル：パッケージ内の関数を並列にコンパイルする
 
 * プログラミング言語Go 練習問題
 
