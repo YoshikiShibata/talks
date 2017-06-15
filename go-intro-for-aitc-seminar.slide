@@ -106,8 +106,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - スレッドではなく、軽量なゴルーチン（goroutine）
 - 伸長可能なスタック
 - ゴルーチン間の通信としてのチャネル（channel）
-- 型の自動変換がほとんどない
-- リフレクション
+- リフレクションをサポート
 
 * オブジェクト指向プログラミング言語
 
@@ -179,7 +178,14 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 .play src/aitc/pingpong.go /^func main/,/^}/
 
 
-* 標準ライブラリ
+* 豊富なライブラリ
+
+- 標準ライブラリ：Goのディストリビューションに標準で含まれるライブラリ
+- [[https://golang.org/pkg/#stdlib]]
+
+- サブリポジトリ：標準ではないが、Goのチームにより開発されている追加ライブラリやコマンド
+- [[https://golang.org/pkg/#subrepo]]
+
 
 * 標準フォーマッタ
 
@@ -194,7 +200,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - 他の言語のようなxUnitフレームワークは提供されていない
 - 独自にテスティング用のパッケージtestingが適用されている
 - ベンチマーク測定用の機能も提供されている
-- オンラインドキュメンテーションに埋め込んで実行できるサンプルコードの機能も提供されている
+- オンラインドキュメンテーションに埋め込んで実行できるサンプルコードの機能も提供されている: [[https://golang.org/pkg/encoding/json/#example_Decoder]]
 
 * 競合状態検出機構
 
@@ -210,10 +216,11 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * プログラミング言語Go 練習問題
 
-.image https://images-na.ssl-images-amazon.com/images/I/410V3ulwP5L.jpg _ 300
+.image https://images-na.ssl-images-amazon.com/images/I/410V3ulwP5L.jpg _ 256
 
 - 全部で134問
 - HTTP、JSON、REST APIに関する基礎知識が必要
 - 私の解答は、[[https://github.com/YoshikiShibata/gpl]]にあります
+- 正誤表：[[http://www001.upp.so-net.ne.jp/yshibata/]]
 
 
