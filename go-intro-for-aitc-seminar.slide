@@ -128,7 +128,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - ioパッケージに定義されているWriterインタフェース
 .code src/aitc/io.go /^\/\/ Writer is the interface/,/^}/
 
-* インタフェース（実装)
+* インタフェース（実装)（gopl.io/ch7/bytecounter）
 
 .play src/aitc/bytecounter.go /START OMIT/,/END OMIT/
 
@@ -157,7 +157,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - ゴルーチンは、Goのランタイムでスケジューリングされる
 - 実際の処理は、OSのスレッド上で実行される（ _m:n_ スケジューリング)
 - OSスレッドを1個でもすべてのゴルーチンをスケジューリング可能
-- 環境変数GOMAXPROCSで指定可能（デフォルトはコア数）
+- OSスレッドの数は、環境変数GOMAXPROCSで指定可能（デフォルトはコア数）
 - runtime.GOMAXPROCS()でプログラム的に設定可能
 - Go 1.8までは最大256スレッド
 - Go 1.9では最大1024スレッド
@@ -171,7 +171,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - ゴルーチンのスタックは、自動的に伸長されていく
 - 初期値：8Kバイト
 - デフォルト最大値：250MB（32ビット環境）、1GB（64ビット環境）
-- 最大値の変更：debug.SetMaxStack （戻り値は以前の最大値）
+- 最大値の変更：debug.SetMaxStack関数 （戻り値は以前の最大値）
 .play src/aitc/stacksize.go 
 
 * チャネル（channel）
@@ -180,7 +180,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * チャネル（続き）
 
-.play src/aitc/sieve.go /^func main/,/^}/
+.play src/aitc/sieve.go /^\/\/ 素数のふるい/,/^}/
 
 * チャネル（ピンポン）
 
@@ -188,6 +188,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * チャネル（ピンポン続き）
 
+- 二つのゴルーチン間でデータを繰り返し受け渡す
 .play src/aitc/pingpong.go /^func main/,/^}/
 
 
@@ -236,4 +237,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - 私の解答は、[[https://github.com/YoshikiShibata/gpl]]にあります
 - 正誤表：[[http://www001.upp.so-net.ne.jp/yshibata/]]
 
+* 横浜Go読書会
 
+- 書籍『プログラミング言語Go』を毎月第2土曜日の午後に読む読書会です。
+- [[https://yokohama-go-reading.connpass.com/]]

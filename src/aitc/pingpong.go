@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-const durationInSeconds = 100 // seconds
+const durationInSeconds = 10 // seconds
 
 func main() {
 	ch1 := make(chan struct{}) // HL
@@ -37,8 +37,10 @@ func pingPong(in <-chan struct{}, // 受信
 	end <-chan struct{}, // 終了指示
 	result chan<- int) { // 結果
 	for i := 0; ; i++ {
+		// in もくしは end からの受信
 		select { // HL
 		case v := <-in: // HL
+			// outへの送信、もしくは、endからの受信
 			select { // HL
 			case out <- v: // HL
 			case <-end: // HL

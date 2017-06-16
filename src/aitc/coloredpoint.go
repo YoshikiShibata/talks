@@ -17,7 +17,7 @@ import "image/color"
 type Point struct{ X, Y float64 }
 
 type ColoredPoint struct {
-	Point
+	Point // 埋め込み // HL
 	Color color.RGBA
 }
 
@@ -41,8 +41,8 @@ func main() {
 	var p = ColoredPoint{Point{1, 1}, red}
 	var q = ColoredPoint{Point{5, 4}, blue}
 
-	fmt.Println(p.Distance(q.Point)) // "5"
-	p.ScaleBy(2)
-	q.ScaleBy(2)
-	fmt.Println(p.Distance(q.Point)) // "10"
+	fmt.Println(p.Distance(q.Point)) // "5" // HL
+	p.ScaleBy(2)                     // HL
+	q.ScaleBy(2)                     // HL
+	fmt.Println(p.Distance(q.Point)) // "10" // HL
 }

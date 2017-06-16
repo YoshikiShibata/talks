@@ -5,30 +5,30 @@ package main
 import "fmt"
 
 // START OMIT
-// Send the sequence 2, 3, 4, ... to channel 'ch'.
+// チャネルchへ2、3、4、...と順に数値を送る
 func Generate(ch chan<- int) { // HL
 	for i := 2; ; i++ {
-		ch <- i // Send 'i' to channel 'ch'. // HL
+		ch <- i // iをチャネルchへ送る // HL
 	}
 }
 
-// Copy the values from channel 'in' to channel 'out',
-// removing those divisible by 'prime'.
+// チャネルinから値を読み出してチャネルoutへコピーするが、
+// primeで割れる値は除く。
 func Filter(in <-chan int, out chan<- int, prime int) { // HL
 	for {
-		i := <-in // Receive value from 'in'. // HL
+		i := <-in // inから値を受信 // HL
 		if i%prime != 0 {
-			out <- i // Send 'i' to 'out'.
+			out <- i // iをoutへ送信 // HL
 		}
 	}
 }
 
 // END OMIT
 
-// The prime sieve: Daisy-chain Filter processes.
+// 素数のふるい：連結フィルター処理
 func main() {
-	ch := make(chan int) // Create a new channel.
-	go Generate(ch)      // Launch Generate goroutine.
+	ch := make(chan int) // 新たなチャネルの生成
+	go Generate(ch)      // Generateゴルーチンの開始
 	for i := 1; i < 100000; i++ {
 		prime := <-ch
 		fmt.Printf("goroutines = %8d: prime number = %d\n", i, prime)

@@ -13,7 +13,7 @@ import (
 
 // START OMIT
 func main() {
-	go spinner(100 * time.Millisecond) // HL
+	go spinner(100 * time.Millisecond) // 別のゴルーチンで実行 // HL
 	const n = 45
 	fibN := fib(n) // slow
 	fmt.Printf("\rFibonacci(%d) = %d\n", n, fibN)
