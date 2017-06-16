@@ -132,7 +132,14 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 .play src/aitc/bytecounter.go /START OMIT/,/END OMIT/
 
-* 埋め込み
+* インタフェースとオンラインドキュメンテーション
+
+- 通常のオンラインドキュメンテーションでは、インタフェースをどの型が実装しているのか、あるいは、ある型がどのインタフェースを実装しているのかは分からない。
+- [[https://golang.org/pkg/]]
+- godocにオプションを指定して起動すると解析してくれる
+- godoc -analysis=type -analysis=pointer -http :8000
+
+* 埋め込み（コンポジション）
 
 .code src/aitc/coloredpoint.go /START OMIT/,/END OMIT/
 

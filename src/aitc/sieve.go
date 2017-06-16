@@ -27,13 +27,22 @@ func Filter(in <-chan int, out chan<- int, prime int) { // HL
 
 // 素数のふるい：連結フィルター処理
 func main() {
-	ch := make(chan int) // 新たなチャネルの生成
-	go Generate(ch)      // Generateゴルーチンの開始
-	for i := 1; i < 100000; i++ {
-		prime := <-ch
-		fmt.Printf("goroutines = %8d: prime number = %d\n", i, prime)
-		ch1 := make(chan int)
-		go Filter(ch, ch1, prime)
-		ch = ch1
+	in := make(chan int) // 新たなチャネルの生成
+	go Generate(in)      // Generateゴルーチンの開始
+	for i := 1; i <= 20000; i++ {
+		prime := <-in
+		fmt.Printf("goroutines = %5d: prime number = %d\n", i, prime)
+		out := make(chan int)
+		go Filter(in, out, prime)
+		in = out
+
+		// 1回目：go Filter(in, out, 2)
+		// 2回目：go Filter(in, out, 3)
+		// 3回目：go Filter(in, out, 5)
+		// 4回目：go Filter(in, out, 7)
+		// 5回目：go Filter(in, out, 11)
+		// 6回目：go Filter(in, out, 13)
+		// 7回目：go Filter(in, out, 17)
+		// ...
 	}
 }

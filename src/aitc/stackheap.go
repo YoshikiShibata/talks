@@ -17,7 +17,7 @@ func main() {
 	yaddr := uintptr(unsafe.Pointer(y))
 	fmt.Printf("y = %#x\n", yaddr)
 
-	var z int
+	var z int // HL
 	z = 1
 	global = &z // HL
 	fmt.Printf("z = %p\n", global)
