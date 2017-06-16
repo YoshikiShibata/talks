@@ -1,7 +1,7 @@
-package main
+package main // HL
 
 import "fmt"
 
-func main() {
+func main() { // HL
 	fmt.Println("Hello, 世界")
 }
