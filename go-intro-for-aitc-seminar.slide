@@ -6,6 +6,7 @@ AITC セミナー
 ソフトウェアエンジニア、技術書翻訳、コンサルティング
 http://yshibata.blog.so-net.ne.jp/
 @yoshiki_shibata 
+https://go-talks.appspot.com/github.com/YoshikiShibata/talks/go-intro-for-aitc-seminar.slide
 
 * Go言語の歴史
 
@@ -173,7 +174,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * ゴルーチン（gopl.io/ch8/spinner）
 
-.play src/aitc/spinner.go /START OMIT/,/END OMIT/
+.code src/aitc/spinner.go /START OMIT/,/END OMIT/
 
 * 伸長可能なスタック
 
@@ -189,7 +190,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 * チャネル（続き）
 
-.play src/aitc/sieve.go /^\/\/ 素数のふるい/,/^}/
+.code src/aitc/sieve.go /^\/\/ 素数のふるい/,/^}/
 
 * チャネル（ピンポン）
 
@@ -198,7 +199,7 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 * チャネル（ピンポン続き）
 
 - 二つのゴルーチン間でデータを繰り返し受け渡す
-.play src/aitc/pingpong.go /^func main/,/^}/
+.code src/aitc/pingpong.go /^func main/,/^}/
 
 
 * 豊富なライブラリ
