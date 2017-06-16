@@ -127,6 +127,8 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 
 - ioパッケージに定義されているWriterインタフェース
 .code src/aitc/io.go /^\/\/ Writer is the interface/,/^}/
+- この例は、メソッドが一つであるが、複数のメソッドをインタフェースに定義可能
+- インタフェースに定義されたメソッドをすべて提供している型は、そのインタフェースを実装していることになる（ダックタイピング）
 
 * インタフェース（実装)（gopl.io/ch7/bytecounter）
 
@@ -228,12 +230,13 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - race condition（競合状態）を検出する機構が提供されている
 - goコマンドのbuild、run、testに-raceオプションを付けると競合状態検出機構が埋め込まれて実行される
 - 動的に解析するので、実行しないと検出できない
-- しかし、自動テストにより、長時間ランニングテストを行うのがベター
+- 自動テストにより、長時間ランニングテストを行うのがベター
 
-* Go1.9 (Comming in August 2017)
+* Go1.9
 
-- 言語仕様変更（type alias）: 他のパッケージの型を自分のパッケージの型として再定義できる。[[https://github.com/golang/proposal/blob/master/design/18130-type-alias.md]]
-- パラレルコンパイル：パッケージ内の関数を並列にコンパイルする
+- 2017年8月にリリース予定
+- 現在、Beta1が公開されている
+- ドラフトのリリースノート：[[https://tip.golang.org/doc/go1.9]]
 
 * プログラミング言語Go 練習問題
 
@@ -244,7 +247,15 @@ Goは、 *「インタプリタで動的型付け言語のプログラミング�
 - 私の解答は、[[https://github.com/YoshikiShibata/gpl]]にあります
 - 正誤表：[[http://www001.upp.so-net.ne.jp/yshibata/]]
 
+* サンプルコードがGoで書かれている技術書
+
+.image https://images-na.ssl-images-amazon.com/images/I/91W0lVibqIL.jpg _ 256
+- 渋川よしき 著『Real World HTTP: 歴史とコードに学ぶインターネットとウェブ技術』
+- 2017年6月14日発売、オライリー・ジャパン
+
+
 * 横浜Go読書会
 
 - 書籍『プログラミング言語Go』を毎月第2土曜日の午後に読む読書会です。
 - [[https://yokohama-go-reading.connpass.com/]]
+
